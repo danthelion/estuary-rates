@@ -1,0 +1,24 @@
+---
+credentials:
+  password_sops: "ENC[AES256_GCM,data:869xjSxAXSA=,iv:UkD1PSZzuGMLBfPhUHYBiCRQrEjHNVt81NEbWwhx/PA=,tag:kAmL/5hISSFDdwUcdBjgVQ==,type:str]"
+  user_sops: "ENC[AES256_GCM,data:VYBzgg==,iv:m2JsuoJ+DEDWF7coXIXvZrsbgu0bUG6QNdzDBZde/6s=,tag:2glSNP9hPcS6jzBL86t9ZA==,type:str]"
+parser:
+  compression: ~
+  defaultOffset: "+00:00"
+  format:
+    type: json
+url: "https://ad46-209-35-224-240.ngrok-free.app/rates.json"
+sops:
+  kms: ~
+  gcp_kms:
+    - resource_id: projects/helpful-kingdom-273219/locations/us-central1/keyRings/catalog-sops/cryptoKeys/config-encryptor
+      created_at: "2024-03-09T19:14:51Z"
+      enc: CiQABM8p++uguYdkzYYAwigOfYhvAluACMekLbmItG9hbLw1oKkSSQDjvsmqAi+akyxGgT8wOwcduBDwFoadmU8cjohs2OLdj3OBda9tC0KqxvW/swzt43L3SXvZ0qOfnj5Pw26zcOgMNF1tv/3G6jk=
+  azure_kv: ~
+  hc_vault: ~
+  age: ~
+  lastmodified: "2024-03-09T19:14:51Z"
+  mac: "ENC[AES256_GCM,data:LtW3E8HIVTNt91LMpdOsnWZAos+eBs+nJHURBwjjE8BmJg8xrhYmoHsve80vrZsw0nLhgYmdJT8QeWyfT35cpQiqPUic9PYDIqQsyHNrYz8O5F6gN9s57vbeqvSREkFPiqyf3iB5qyFS5ZUMyhRmJGYqxjmA86f/vud4ZKY+otQ=,iv:c6bFOYgL+f19tU3avaTI2ZWsz+01Q7jCBHT/BbhcCRQ=,tag:ICnZ6uJ+RbxRhhj8Iwhnvg==,type:str]"
+  pgp: ~
+  encrypted_suffix: _sops
+  version: 3.7.3

@@ -1,0 +1,4 @@
+---
+import:
+  - ratesjson/flow.yaml
+  - stocks/flow.yaml

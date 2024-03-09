@@ -1,0 +1,22 @@
+---
+advanced:
+  is_free_plan: true
+api_key_id_sops: "ENC[AES256_GCM,data:v9pitwijc5+A1FOSluJacoOHC+Q=,iv:09u33O9QPO7xge/1g6vXUuqlhQP0ZkqKTxD5hpAylVc=,tag:DFkxwYmZzTfxqk2kVnH+Qg==,type:str]"
+api_secret_key_sops: "ENC[AES256_GCM,data:RG4zYe/pnG8FfEgRe1HHocSUxgD+1p4opIudhFAXyLEsZYArGMmZNw==,iv:3prEZiQkKtpAVUcNteBz8L0yDKbqA8TBtUgLSzk8YB4=,tag:VVugLr3AqqEIrixDopIzEw==,type:str]"
+feed: iex
+start_date: "2024-03-08T00:00:00Z"
+symbols: NVDA
+sops:
+  kms: ~
+  gcp_kms:
+    - resource_id: projects/helpful-kingdom-273219/locations/us-central1/keyRings/catalog-sops/cryptoKeys/config-encryptor
+      created_at: "2024-03-08T16:10:26Z"
+      enc: CiQABM8p+yJ9kgLll5wkR71X6dff3wu9dTDL4z+O641hW57AIZYSSADjvsmqEbm2ysa7q7x1f86e36jWt64FjlH0jv+/wwXJ7cc8pzTf1lFYZjUd93YXZcNg6/XFTvIysFXBEvNqa8PmBoltnuiCiQ==
+  azure_kv: ~
+  hc_vault: ~
+  age: ~
+  lastmodified: "2024-03-08T16:10:26Z"
+  mac: "ENC[AES256_GCM,data:bZSANNptD2/o0LSWIJKgWhhrmlHCMXSq0t9qmIVHqaBHGsfX//zPlCkFdCQ39wgHBydrtFEVncYafZ2kp7dN0FhIQdA0gh2ehTz6fEtO7tHWAcSV9c+bjtmQXWx5tV0xkVIaJW0WG0w5j4dMucYBmVUOJTPG5YVUTL4zb/XFlG0=,iv:1rLrQ81xZz98vUMm8vC4P5M6Gd37w4gfZDzf2PI7NUY=,tag:I+Yd2IOrUQOipf3z2yAAgA==,type:str]"
+  pgp: ~
+  encrypted_suffix: _sops
+  version: 3.7.3

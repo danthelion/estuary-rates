@@ -1,0 +1,36 @@
+---
+captures:
+  DaniP/stocks/source-alpaca:
+    autoDiscover:
+      addNewBindings: true
+      evolveIncompatibleCollections: true
+    endpoint:
+      connector:
+        image: "ghcr.io/estuary/source-alpaca:v1"
+        config: source-alpaca.config.yaml
+    bindings:
+      - resource:
+          name: iex
+        target: DaniP/stocks/iex
+    shards:
+      disable: true
+
+collections:
+  DaniP/stocks/iex:
+    schema: iex.schema.yaml
+    key:
+      - /ID
+      - /Symbol
+      - /Exchange
+      - /Timestamp
+
+    derive:
+
+      using:
+        sqlite: {}
+
+      transforms:
+        - name: checkThreshold
+          source: DaniP/stocks/iex
+          shuffle: { key: [/Symbol] }
+          lambda: checkThreshold.sql

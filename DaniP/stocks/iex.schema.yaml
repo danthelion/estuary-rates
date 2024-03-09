@@ -1,0 +1,47 @@
+---
+$schema: "http://json-schema.org/draft/2020-12/schema"
+properties:
+  ID:
+    type: integer
+    title: ID
+    description: Trade ID
+    default: 0
+  Symbol:
+    type: string
+    title: Symbol
+    description: Symbol
+    default: "N/A"
+  Exchange:
+    type: string
+    title: Exchange
+    description: Exchange where the trade happened
+    default: "N/A"
+  Price:
+    type: number
+    title: Price
+    description: Trade price
+    default: 0.0
+  Size:
+    type: integer
+    title: Size
+    description: Trade size
+    default: 0
+  Timestamp:
+    type: string
+    format: date-time
+    title: Timestamp
+    description: Timestamp in RFC-3339 format with nanosecond precision
+    default: "1970-01-01T00:00:00Z"
+  Conditions:
+    items:
+      type: string
+    type: array
+    title: Conditions
+    description: Trade conditions
+    default: []
+  Tape:
+    type: string
+    title: Tape
+    description: Tape
+    default: "N/A"
+type: object
