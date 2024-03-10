@@ -1,1 +1,1 @@
-SELECT $ID, $Symbol, $Exchange, $Timestamp, $Price WHERE $Price < 835;
+SELECT $ID, $Symbol, $Price, $Timestamp WHERE $Price < 835;

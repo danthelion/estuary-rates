@@ -7,9 +7,9 @@ materializations:
         config: materialize-bigquery.config.yaml
     bindings:
       - resource:
-          table: iex
+          table: dips
           delta_updates: false
-        source: DaniP/stocks/iex
+        source: DaniP/stocks/dips
         fields:
           recommended: true
       - resource:

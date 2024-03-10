@@ -24,6 +24,13 @@ collections:
       - /Exchange
       - /Timestamp
 
+  DaniP/stocks/dips:
+    schema: dips.schema.yaml
+    key:
+      - /ID
+      - /Symbol
+      - /Timestamp
+
     derive:
 
       using:

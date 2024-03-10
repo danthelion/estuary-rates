@@ -1,5 +1,4 @@
 ---
 import:
   - dwh/flow.yaml
-  - ratesjson/flow.yaml
   - stocks/flow.yaml
