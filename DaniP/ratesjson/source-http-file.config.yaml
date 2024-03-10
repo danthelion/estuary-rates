@@ -7,7 +7,7 @@ parser:
   defaultOffset: "+00:00"
   format:
     type: json
-url: "https://e87b-209-35-224-240.ngrok-free.app/rates.json"
+url: "https://ad46-209-35-224-240.ngrok-free.app/rates.json"
 sops:
   kms: ~
   gcp_kms:

@@ -1,0 +1,23 @@
+---
+materializations:
+  DaniP/dwh/materialize-bigquery:
+    endpoint:
+      connector:
+        image: "ghcr.io/estuary/materialize-bigquery:v1"
+        config: materialize-bigquery.config.yaml
+    bindings:
+      - resource:
+          table: iex
+          delta_updates: false
+        source: DaniP/stocks/iex
+        fields:
+          recommended: true
+      - resource:
+          table: rates.json
+          delta_updates: false
+        source: DaniP/ratesjson/rates.json
+        fields:
+          recommended: true
+        backfill: 1
+    shards:
+      disable: true

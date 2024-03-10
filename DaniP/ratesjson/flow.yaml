@@ -1,5 +1,19 @@
 ---
 captures:
+  DaniP/ratesjson/source-http-file:
+    autoDiscover:
+      addNewBindings: true
+      evolveIncompatibleCollections: true
+    endpoint:
+      connector:
+        image: "ghcr.io/estuary/source-http-file:v1"
+        config: source-http-file.config.yaml
+    bindings:
+      - resource:
+          stream: rates.json
+        target: DaniP/ratesjson/rates.json
+    shards:
+      disable: true
   DaniP/ratesjson/source-rates:
     autoDiscover:
       addNewBindings: true
@@ -12,9 +26,35 @@ captures:
       - resource:
           stream: rates.json
         target: DaniP/ratesjson/rates
-
 collections:
   DaniP/ratesjson/rates:
     schema: ratesjson.schema.yaml
     key:
       - /date
+  DaniP/ratesjson/rates.json:
+    writeSchema:
+      properties:
+        _meta:
+          properties:
+            file:
+              description: "The key of the source file, added automatically by Flow"
+              type: string
+            offset:
+              description: "The offset of the record within the source file, added automatically by Flow"
+              minimum: 0
+              type: integer
+          required:
+            - file
+            - offset
+          type: object
+      required:
+        - _meta
+      type: object
+      x-infer-schema: true
+    readSchema:
+      allOf:
+        - $ref: "flow://write-schema"
+        - $ref: "flow://inferred-schema"
+    key:
+      - /_meta/file
+      - /_meta/offset
