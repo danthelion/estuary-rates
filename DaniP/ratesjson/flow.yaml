@@ -1,6 +1,6 @@
 ---
 captures:
-  DaniP/ratesjson/source-http-file:
+  DaniP/ratesjson/source-rates:
     autoDiscover:
       addNewBindings: true
       evolveIncompatibleCollections: true
@@ -11,32 +11,10 @@ captures:
     bindings:
       - resource:
           stream: rates.json
-        target: DaniP/ratesjson/rates.json
+        target: DaniP/ratesjson/rates
+
 collections:
-  DaniP/ratesjson/rates.json:
-    writeSchema:
-      x-infer-schema: true
-      type: object
-      properties:
-        _meta:
-          type: object
-          properties:
-            file:
-              description: "The key of the source file, added automatically by Flow"
-              type: string
-            offset:
-              description: "The offset of the record within the source file, added automatically by Flow"
-              type: integer
-              minimum: 0
-          required:
-            - file
-            - offset
-      required:
-        - _meta
-    readSchema:
-      allOf:
-        - $ref: "flow://write-schema"
-        - $ref: "flow://inferred-schema"
+  DaniP/ratesjson/rates:
+    schema: ratesjson.schema.yaml
     key:
-      - /_meta/file
-      - /_meta/offset
+      - /date

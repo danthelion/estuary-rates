@@ -1,0 +1,29 @@
+$schema: "http://json-schema.org/draft/2020-12/schema"
+type: object
+properties:
+  date:
+    type: string
+    title: Date
+    format: date
+  USD:
+    type: number
+    title: USD
+    minimum: 0
+  EUR:
+    type: number
+    title: EUR
+    minimum: 0
+  GBP:
+    type: number
+    title: GBP
+    minimum: 0
+  JPY:
+    type: number
+    title: JPY
+    minimum: 0
+required:
+  - date
+  - USD
+  - EUR
+  - GBP
+  - JPY
